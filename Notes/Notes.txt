@@ -1,0 +1,130 @@
+  #####     EPISODE 01  #######
+What is React?
+React is a JavaScript librabry.
+
+ What is crossOrigin?
+ In security, an origin is defined by a combination of the protocol and domain and prot.
+ it is request when a resource from one origin to request from different origin.
+ eg:https://eaxmple.com:8080
+
+ What is ReactElement?
+ ReactElement is javascript object.
+
+
+1. What is Reconciliation?
+
+In React, Reconciliation is:
+
+The process of comparing the previous Virtual DOM with the new Virtual DOM and updating only the changed parts in the real DOM.
+
+🧠 Why React doesn’t update DOM directly?
+
+Because:
+
+Real DOM updates are slow
+
+React creates a Virtual DOM (JavaScript object)
+
+It compares changes in memory (fast)
+
+Then updates only necessary nodes
+
+Example:
+root.render(<h1>Hello</h1>);
+
+Later:
+
+root.render(<h1>Hello Gafoor</h1>);
+
+React compares:
+
+Old:
+
+<h1>Hello</h1>
+
+New:
+
+<h1>Hello Gafoor</h1>
+
+It sees:
+
+Same tag (h1)
+
+Only text changed
+
+So it updates only the text node, not the full element.
+
+That comparison process = Reconciliation
+
+2️⃣ What is Fiber?
+
+React 16 introduced a new engine called Fiber.
+
+👉 Fiber is the internal algorithm that:
+
+Breaks rendering work into small units
+
+Can pause work
+
+Can resume work
+
+Can prioritize updates
+
+Before Fiber:
+
+Rendering was synchronous (blocking)
+
+After Fiber:
+
+Rendering can be asynchronous (non-blocking)
+
+3️⃣ What is Concurrent Rendering? (React 18 Feature)
+
+In React 18, we have:
+
+const root = ReactDOM.createRoot(container);
+
+This enables Concurrent Rendering
+
+What does that mean?
+
+React can:
+
+Pause rendering
+
+Continue later
+
+Prioritize important updates
+
+Keep UI responsive
+
+Example:
+
+User typing in input (high priority)
+
+Big list rendering (low priority)
+
+React will prioritize typing first.
+
+4️⃣ Real DOM vs Virtual DOM (Interview Table)
+Feature	Real DOM	Virtual DOM
+Speed	Slow	Fast
+Update	Repaints full structure	Updates only changed nodes
+Control	Browser	React
+5️⃣ Strong 30-Second Interview Answer
+
+React uses a Virtual DOM to optimize performance. When state changes, React creates a new Virtual DOM and compares it with the previous one using a process called reconciliation. The Fiber architecture allows React to break rendering into small units and prioritize updates. In React 18, concurrent rendering improves responsiveness by enabling interruptible rendering.
+
+
+what is createRoot()?
+1.createRoot() is creating a root object through the ReactDOM.
+2.It is create a fiber tree.
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+what is root.render()?
+root.render() returns undefined because it is a side-effect function that renders React elements into the DOM and does not return any value. In JavaScript, functions without a return statement automatically return undefined.
+1. React create the fiber tree
+2.it compares reconciliation process.
+3.it update the real DOM.
+
+
