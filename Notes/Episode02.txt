@@ -1,0 +1,29 @@
+pushing the code git hub repository
+
+In our project we using npm init.
+after thet we install parcel as dev depenedicens
+
+
+#### parcel
+start project with parcel => npx parcel index.html => server is creating localhost
+npx is existusting parcel
+prodcution build => npx parcel build index.html
+
+ 1.Dev Build
+ 2.local server
+ 3.HMR => HOT MODUEL REPLACEMENT
+ 4.File Watching algothrim - it is written in seeing c++
+ 5.Faster build - caching
+ 6.Image Optimization
+ 7.minification
+ 8.Bundling
+ 9.Compress the files
+ 10.Consistenet Hashing
+ 11.Code Splitting
+ 12.Differential Bundling- support older browsers
+ 13.Diagnostic
+ 14.Error handling
+ 15.HTTPS
+ 16.Zero Config
+ 17.Tree Shaking - remove unused code from your project
+ 18.Different dev and production bundles
