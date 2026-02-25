@@ -1,0 +1,45 @@
+                            #### Episode -03 ####
+How to run the project?
+In package.json we are confurgation to the scripts with start: parcel index.html
+then in terminal we use npm start the nproject willl run.
+
+What is JSX?
+JSX is the HTML or XML like syntax.
+EX: const jsxhead = <h1 id="heading">Welcome to React course</h1>
+
+What React component?
+There is two type of components
+ 1. class based component
+ 2. functional based component
+
+Wht is React fucntional component?
+It is a normal JavaScript function, which returns the some JSX.
+EX: const HeadingComponent = () =>{
+    return <h1>Welcome To The React Course</h1>
+} 
+
+what is React element?
+React Element is javasript object
+EX: const heading = <h1>Welcome To The React Course</h1>
+
+how to render the functional component?
+root.render(<HeadingComponent />)
+
+what is component composition?
+In React two component mix into come one component.
+
+EX: const Title = () =>{
+    return <h1>It is Heading title</h1>
+}
+const HeadingComponent = () => {
+    return (
+        <div id="heading">
+            {<Title />}
+            <h1 className="heading">
+                Welcome to the React Course
+
+            </h1>
+        </div>
+
+    )
+};
