@@ -1,58 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-/**
- * Home
- * - logo
- * - Navbar 
- * Body
- * -Search
- * -Resturant container
- *  -Resturant list
- *  -resturant card
- *    -Image
- *    -Name of Resturant
- *    - Rating
- *    -Cusines
- *    -Delivery time
- * Footer
- * -Links
- * -copy rights etc
- */
-const Home = () =>{
-
-    return(
-        <div className="home-container">
-            <div className="logo">
-                <img className="logo-app" alt="logo" src="https://cdn2.f-cdn.com/contestentries/2426851/74260034/6689bc27dfb41_thumb900.jpg" />
-            </div>      
-            <div className="navbar">
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact</li>
-                    <li>Cart</li>
-                </ul>
-            </div>      
-        </div>
-    )
-}
-
-const Rescards = (props) =>{
-    const {resList} = props;
-
-    const {cloudinaryImageId, name,cuisines,avgRating,costForTwo} = resList?.info;
-    return (
-        <div className="res-card">
-            <img className="res-logo" alt="res-logo" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+cloudinaryImageId}/>
-            <h3>{name}</h3>
-            <h5>{cuisines.join(",")}</h5>
-            <h5>{avgRating} stars</h5>
-            <h5>{resList.info.sla.deliveryTime}Mins</h5>
-            <h5>{costForTwo}</h5>
-        </div>
-    )
-}
-const resturantList = [
+const resList = [
 {
 type: "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
 info: {
@@ -746,25 +692,5 @@ type: "WEBLINK"
 widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
 }
 ]
-function Body() {
-    return (
-        <div className="body">
-            <div className="search">Search</div>
-            <div className="res-list">
-                {resturantList.map((resturant) => ( <Rescards key={resturant.info.id} resList={resturant} /> ))}
-            </div>
-        </div>
-    );
-}
-const GafoorFoodApp = () =>{
-    return(
-        <div className="food-app">
-            <Home />
-            <Body />
-        </div>
-    )
-}
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(<GafoorFoodApp />);
+export default resList;

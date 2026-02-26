@@ -1,0 +1,71 @@
+   ###### Episode-05 ####
+
+
+/**
+ * Home
+ * - logo
+ * - Navbar 
+ * Body
+ * -Search
+ * -Resturant container
+ *  -Resturant list
+ *  -resturant card
+ *    -Image
+ *    -Name of Resturant
+ *    - Rating
+ *    -Cusines
+ *    -Delivery time
+ * Footer
+ * -Links
+ * -copy rights etc
+ */
+
+ import and export are two types
+ 1. defalut export and named export 
+  EX: export defalut Header; export const namedthing;
+ 2. default import and named import 
+ EX: import Header from "./Header"; and import {Header } from namedthing;
+
+
+ ##React Hooks
+ (Normal js utility functons)
+ 1. useState()
+ 2. useEffect()
+
+ usestate() when state variable is update our dom will be update or re-rendering the dom.
+
+ usestate() is given arr;
+ ex: const arr = useState();
+ const [list, setList] = arr; or 
+ const list = arr[0];
+ const setList - arr[1];
+
+ The crucial point about State variables is that
+whenever they update, React triggers a reconciliation
+cycle and re-renders the component.
+- This means that as soon as the data layer changes,
+React promptly updates the UI layer. The data layer is
+always kept in sync with the UI layer.
+- To achieve this rapid operation, React employs a
+reconciliation algorithm, also known as the diffing
+algorithm or React-Fibre which we will delve into further
+below.
+
+
+ Chapter 05 - Let's get Hooked!
+Assignment
+● What is the difference between Named Export, Default export and * as export?
+● What is the importance of config.js file
+● What are React Hooks?
+● Why do we need a useState Hook?
+Coding Assignment:
+● Clean up your code
+● Create a Folder Structure for your app
+● Make different files for each Components
+● Create a config file
+● Use all types of import and export
+● Create a Search Box in your App
+● Use useState to create a variable and bind it to the input box
+● Try to make your search bar work
+References
+● Code Link - https://bitbucket.org/namastedev/namaste-react-live/src/master/
