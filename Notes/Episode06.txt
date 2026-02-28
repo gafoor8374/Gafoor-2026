@@ -27,3 +27,9 @@ useEffect is passing two arugument
 
 we want using shimmer?
 shimmer is user inerface like dummy page loads like dummy cards
+
+search input is giving by searchText by using state variable then filter the logic with resturantList but
+there is filter only one time that way we need to keep track into another copy of the for another state variable for stores
+we can keep track filter and map copy of the variable.
+
+

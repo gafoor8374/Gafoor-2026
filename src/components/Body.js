@@ -27,7 +27,7 @@ const Body = () => {
     let searchRes = resturantList.filter((res) =>
       res.info?.name.toLowerCase().includes(searchText.toLowerCase()),
     );
-    console.log(searchRes);
+    // console.log(searchRes);
     setFilterList(searchRes);
   };
 
@@ -52,27 +52,6 @@ const Body = () => {
     );
   };
 
-//   useEffect(()=>{
-//     if(resturantList.length>0){
-//         updateFetchData();
-//     }
-//   },[resturantList]);
-
-//   const updateFetchData = async () =>{
-//     const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/update",
-//     {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify({
-//         lat: 12.9352403, 
-//         lng: 77.624532,
-//       }),
-//     });
-//     const json = await data.json();
-//     console.log(json);
-//   }
 
   //Conditional rendering
  
