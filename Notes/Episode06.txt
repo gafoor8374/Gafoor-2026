@@ -1,0 +1,29 @@
+                   ##### Episode -06 #####
+
+
+1. Monolith:-
+
+
+2. Micro Services:- all services combine to together to create big project this know as single respective prinicipal.
+all services are depolyed.
+
+****** fetching data *******
+1. broswer page load => API call wiat from data => render the data into UI.
+
+2. Browser page load => Render data => API call => Rendering the data into UI.
+
+*********** useEffect( ) ***********
+useEffect is normal js function it will be rturned some piece of js code.
+useEffect is passing two arugument 
+ 1. callback function
+ 2. empty array
+ basicallu inside the callback function called called useEffect() is called.
+
+ first rendering the body then useEffect is called.
+
+ useEffect(()=>{
+    console.log("useEffect called")
+ },[]);
+
+we want using shimmer?
+shimmer is user inerface like dummy page loads like dummy cards
