@@ -7,6 +7,6 @@ const RESIMG_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy
 const lat = 12.9352403;
 const lng = 77.624532;
 
-const MENU_API = "https://corsproxy.io/https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=${lat}&lng=${lng}&restaurantId=";
+const MENU_API = `https://corsproxy.io/https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=${lat}&lng=${lng}&restaurantId=`;
 
 export {LOGO_URL, RESIMG_URL, MENU_API};

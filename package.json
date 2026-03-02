@@ -4,7 +4,7 @@
   "description": "This is React course by akshay saini to learning ",
   "scripts": {
     "test": "jest",
-    "start": "parcel index.html"
+    "start": "parcel index.html --no-cache"
   },
   "repository": {
     "type": "git",
