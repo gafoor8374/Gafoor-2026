@@ -67,3 +67,11 @@ margin: 5px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.user-card{
+    padding:10px;
+    /* height:150px; */
+    border:1px solid red;
+    width:300px;
+    margin:5px;
+}

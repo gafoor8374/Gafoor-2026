@@ -9,6 +9,7 @@ const ResturantMenu = () => {
   const [resInfo, setResInfo] = useState(null);
   const [menuInfo, setMenuInfo] = useState([]);
 
+
   useEffect(() => {
     fetchMenu();
   }, []);
@@ -56,9 +57,6 @@ const ResturantMenu = () => {
       console.log(error);
     }
   };
- if(resInfo === null){
-    return <Shimmer />
- } else{
   const {
     name,
     cuisines,
@@ -83,7 +81,7 @@ const ResturantMenu = () => {
       </div>
     </div>
   );
-};
+
 };
 
 export default ResturantMenu;
