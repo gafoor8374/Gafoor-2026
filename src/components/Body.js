@@ -2,6 +2,7 @@ import Rescards from "./Rescards";
 import resList from "../utils/mockData";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router";
 
 const Body = () => {
   const [resturantList, setResturantList] = useState([]);
@@ -55,7 +56,9 @@ const Body = () => {
 
   //Conditional rendering
  
-    return resturantList.length === 0 ? <Shimmer /> : (
+    return resturantList.length === 0 ? (
+      <Shimmer />
+    ) : (
       <div className="body">
         <div className="flt-btn">
           <input
@@ -75,7 +78,12 @@ const Body = () => {
         </div>
         <div className="res-list">
           {filterList.map((resturant) => (
-            <Rescards key={resturant.info.id} resData={resturant} />
+            <Link
+              key={resturant.info.id}
+              to={("/restaurant/" + resturant.info.id)|| ("restaurant/menu/"+ resturant.info.id)}
+            >
+              <Rescards resData={resturant} />{" "}
+            </Link>
           ))}
         </div>
       </div>

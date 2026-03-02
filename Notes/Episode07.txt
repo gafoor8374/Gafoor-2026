@@ -1,0 +1,105 @@
+        ##### Episode -07 #####
+
+        #### Routers #####
+        rafce is shorter way to create component
+
+useEffect():-
+1.If no dpendency array useEffect is called on every render.
+ ex:useEffect(()=>{})
+2.If Empty depedency array useEffectis call intial render or first page loads.
+ ex: useEffect(()=>{},[])
+3.If depedency array in useEffect call dependency array is change useEffect is called.
+useEffect(()=>{},[btnLogin])
+
+
+useState():-
+useState is doesn't create a outside functional component and if and else statement.
+only create inside the functional componnent and top.
+
+
+Router:-
+Navigation controll for single page applications 
+the we need istall it 
+npm install react-router-dom
+
+creating new pages then we need use Routers
+most of we using createBrowserRouter 
+createBrowserRouter:- create list of object then we pass path and element
+
+ex: const app = createBrowserRouter([
+    {
+        path:'/',
+        element:<GafoorFoodApp />,
+    },
+    {
+        path:"/about",
+        element:<About />,
+    },
+    {
+        path:"/contact",
+        element:<Contact />,
+    }
+])
+
+RouterProvider:-
+
+RouterProvider is provider component then pass the arugument of the routers of the createBrowserRouter as a children
+ex: const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(< RouterProvider router={app}/>);
+
+ChildrenRouter:
+React-router is given the name is outlet component then replace the outlet the render component of the path.
+
+Link :-
+Link is component is link the path.
+
+
+Routing:-
+Routings are two types in web applications
+ 1. Client Side Routing => Changing pages without reloading the browser.
+ 2. Server Side Routing => you make network call the page html is coming form server.
+
+
+//   const allItems = regularCards
+    //     .map((item) => {
+    //       const type = item?.card?.card?.["@type"];
+    //       if (
+    //         type ===
+    //         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    //       ) {
+    //         return item?.card?.card?.itemCards || [];
+    //       }
+    //       if (
+    //         type ===
+    //         "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory"
+    //       ) {
+    //         return (
+    //           item?.carc?.card?.categories?.map(
+    //             (cat) => cat?.itemCards || [],
+    //           ) || []
+    //         );
+    //       }
+    //     //   return [];
+    //     })
+    //     .flat();
+
+ Chapter 07 - Finding the Path
+Assignment
+● What are various ways to add images into our App? Explain with code examples
+● What would happen if we do console.log(useState())?
+● How will useEffect behave if we don't add a dependency array ?
+● What is SPA?
+● What is difference between Client Side Routing and Server Side Routing?
+Coding Assignment:
+● Add Shimmer Effect without installing a library
+● Install react-router-dom
+● Create a appRouter and Provide it to the app
+● Create a Home, About, Contact Page with Link (use child routes)
+● Make a Error page for routing errors
+● Create a Restaurant Page with dynamic restaurant ID
+● (Extra) - Create a login Page using Formik Library
+Resources:
+● React Router DOM - https://reactrouter.com/en/main
+● Client Side Routing - https://reactrouter.com/en/main/start/overview
+● Formik - https://formik.org/
