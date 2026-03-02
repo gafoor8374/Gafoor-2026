@@ -35,14 +35,14 @@ const app = createBrowserRouter([
         path: "/contact",
         element: <Contact />,
       },
-    //   {
-    //     path: "/restaurant/menu/:resId",
-    //     element: <ResturantMenu />,
-    //   },
       {
-        path:"restaurant/:resId",
-        element:<Mockdataresturantmenu />
-      }
+        path: "/restaurant/menu/:resId",
+        element: <ResturantMenu />,
+      },
+    //   {
+    //     path:"restaurant/:resId",
+    //     element:<Mockdataresturantmenu />
+    //   }
     ],
     errorElement: <Error />,
   },

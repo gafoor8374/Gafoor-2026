@@ -80,9 +80,9 @@ const Body = () => {
           {filterList.map((resturant) => (
             <Link
               key={resturant.info.id}
-              to={("/restaurant/" + resturant.info.id)|| ("restaurant/menu/"+ resturant.info.id)}
+              to={("restaurant/menu/"+ resturant.info.id)}
             >
-              <Rescards resData={resturant} />{" "}
+              <Rescards resData={resturant} />
             </Link>
           ))}
         </div>
