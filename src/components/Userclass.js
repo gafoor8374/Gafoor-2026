@@ -32,16 +32,16 @@ class Userclass extends React.Component{
     }
 
     componentDidUpdate(){
-        console.log("component did update")
+        // console.log("component did update")
     }
 
     componentWillUnmount(){
-        console.log("unmount the component")
+        // console.log("unmount the component")
     }
     render (){
         const {name, location, gmail, bio} = this.state.userInfo;
         const {count} = this.state;
-        console.log("Child Render")
+        // console.log("Child Render")
         return (
 
             <div className="user-card">
