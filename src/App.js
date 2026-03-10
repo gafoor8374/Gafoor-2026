@@ -8,6 +8,8 @@ import Error from "./components/Error";
 import ResturantMenu from "./components/ResturantMenu";
 import Mockdataresturantmenu from "./components/Mockdataresturantmenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
+import "../index.css";
+
 // import Grocery from "./components/Grocery";
 
 /**

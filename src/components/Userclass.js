@@ -44,18 +44,21 @@ class Userclass extends React.Component{
         // console.log("Child Render")
         return (
 
-            <div className="user-card">
-                <h5>Count : {count}</h5>
-                <button onClick={()=>{
+            <div className="border border-solid-black w-[300px] m-5 p-5">
+                <h5 className="font-bold">Count : {count}</h5>
+                <div className="">
+                    <button className="mx-1 rounded-md bg-gray-200 border border-black w-[50px]" onClick={()=>{
                     this.setState({
                         count: this.state.count+1,
                     })
                 }}>Add</button>
-                <button onClick={()=>{
+                <button className="mx-1 rounded-md bg-gray-200 border border-black w-[50px]" onClick={()=>{
                     this.setState({
                         count: this.state.count >0 ? this.state.count-1 :0,
                     })
                 }}>Sub</button>
+                </div>
+                
             <h2>Name: {name}</h2>
             <h4>Location: {location}</h4>
             <h5>gmail: {gmail}</h5>

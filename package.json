@@ -7,10 +7,10 @@
     "start": "parcel serve index.html"
   },
   "targets": {
-  "default": {
-    "sourceMap": true
-  }
-},
+    "default": {
+      "sourceMap": true
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gafoor8374/Gafoor-2026.git"
@@ -22,8 +22,12 @@
   },
   "homepage": "https://github.com/gafoor8374/Gafoor-2026#readme",
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.1",
+    "autoprefixer": "^10.4.27",
     "parcel": "^2.16.4",
-    "process": "^0.11.10"
+    "postcss": "^8.5.8",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.4.19"
   },
   "dependencies": {
     "react": "^19.2.4",

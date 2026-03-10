@@ -67,23 +67,25 @@ const Body = () => {
       <Shimmer />
     ) : (
       <div className="body">
-        <div className="flt-btn">
+        <div className="flex mx-10">
           <input
+          className=" m-4 border border-black rounded-lg"
             type="text"
             placeholder="Search Restaurant"
             value={searchText}
             onChange={SearchReasturant}
+
           />
-          <button
+          <button className="m-4 border border-black, bg-green-200 rounded-lg"
             onClick={SeachingResturant}>
             Search
           </button>
 
-          <button className="btn" onClick={FilterRest}>
+          <button className="m-4 border border-black, bg-green-200 rounded-lg" onClick={FilterRest}>
             Filter Resturant
           </button>
         </div>
-        <div className="res-list">
+        <div className="flex flex-wrap border-solid m-5 p-4">
           {filterList.map((resturant) => (
             <Link
               key={resturant.info.id}

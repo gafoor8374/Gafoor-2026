@@ -217,7 +217,7 @@ const ResturantMenu = () => {
 
   return (
     <div className="res-info">
-      <h1>{name}</h1>
+      <h1 className="font-bold">{name}</h1>
       <h3>
         {avgRatingString}({totalRatingsString}) <span>.</span>
         {costForTwoMessage}

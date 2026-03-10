@@ -1,4 +1,11 @@
-.home-container{
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* @import "tailwindcss"; */
+
+/* .home-container{
     display: flex;
     border: 1px solid red;
 }
@@ -71,7 +78,7 @@ margin: 5px;
 .user-card{
     padding:10px;
     /* height:150px; */
-    border:1px solid red;
+    /* border:1px solid red;
     width:300px;
-    margin:5px;
-}
+    margin:5px; */
+/* }  */
