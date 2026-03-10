@@ -57,7 +57,7 @@ const Mockdataresturantmenu = () => {
             <li 
             key={`${item?.card?.info?.id}`}
             >
-                {item?.card?.info?.name}
+                {item?.card?.info?.name} 
                 </li> 
           ))}
         </ul>

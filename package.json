@@ -4,8 +4,13 @@
   "description": "This is React course by akshay saini to learning ",
   "scripts": {
     "test": "jest",
-    "start": "parcel index.html --no-cache"
+    "start": "parcel serve index.html"
   },
+  "targets": {
+  "default": {
+    "sourceMap": true
+  }
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gafoor8374/Gafoor-2026.git"

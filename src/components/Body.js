@@ -3,12 +3,13 @@ import resList from "../utils/mockData";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   const [resturantList, setResturantList] = useState([]);
   const [filterList, setFilterList] = useState([]);
 
-  const [searchText, setSearchText] = useState("");
+  const [searchText, setSearchText] = useState("")
 
   // Event handler
   const FilterRest = () => {
@@ -52,7 +53,13 @@ const Body = () => {
         ?.restaurants,
     );
   };
+// debugger;
+  const onlineStatus = useOnlineStatus();
 
+  if(onlineStatus === false){
+    return(<h4>Look's your internet connection check...!!!!</h4>);
+    
+  }
 
   //Conditional rendering
  

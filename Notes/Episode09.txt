@@ -1,0 +1,61 @@
+    ##### Episode -09 ##########
+
+
+    ************** Custom Hooks *******
+    Custom Hooks are normal utilty function 
+      // useEffect(() => {
+  //   fetchMenu();
+  // }, []);
+
+  // const fetchMenu = async () => {
+  //   try {
+      // const data = await fetch(MENU_API+ resId, {
+      //   method: "GET",
+      //   headers: {
+      //     accept: "*/*",
+      //     "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+      //   },
+      // });
+  //     const json = await data.json();
+  //     // console.log(json);
+  //     setResInfo(json.data);
+
+  //     const groupedCard = json?.data?.cards?.find((card) => card?.groupedCard);
+
+  //     const regularCards =
+  //       groupedCard?.groupedCard?.cardGroupMap?.REGULAR?.cards || [];
+
+  //   //   console.log(regularCards);
+
+
+  //   const allItems = regularCards
+  // .map((item) => {
+  //   const card = item?.card?.card;
+
+  //   const directItems = card?.itemCards || [];
+
+  //   const nestedItems =
+  //     card?.categories?.map((cat) => cat?.itemCards || []) || [];
+
+  //   return [...directItems, ...nestedItems.flat()];
+  // })
+  // .flat();
+    
+  //     console.log(allItems);
+
+  //     setMenuInfo(allItems);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
+
+
+  lazy loading:
+
+  It is called 
+  lazy loading, 
+  on demand loading,
+  chunking,
+  code spilting,
+  dynamic import

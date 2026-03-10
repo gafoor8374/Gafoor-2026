@@ -1,4 +1,4 @@
-import React from "react";
+import React, {lazy,Suspense}from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -8,6 +8,22 @@ import Error from "./components/Error";
 import ResturantMenu from "./components/ResturantMenu";
 import Mockdataresturantmenu from "./components/Mockdataresturantmenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
+// import Grocery from "./components/Grocery";
+
+/**
+ * lazy loading:
+
+  It is called 
+  lazy loading, 
+  on demand loading,
+  chunking,
+  code spilting,
+  dynamic import
+ */
+const Grocery = lazy(() => (
+  import("./components/Grocery")
+)
+);
  
 const GafoorFoodApp = () =>{
     return(
@@ -38,6 +54,10 @@ const app = createBrowserRouter([
       {
         path: "/restaurant/menu/:resId",
         element: <ResturantMenu />,
+      },
+      {
+        path: "/grocery",
+        element: <Suspense fallback={<h1>loading...!!!</h1>}><Grocery /></Suspense>,
       },
     //   {
     //     path:"restaurant/:resId",
