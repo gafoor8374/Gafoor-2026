@@ -11,6 +11,9 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
 import "../index.css";
 import UserContext from "./utils/UserContext";
 import LogUser from "./components/LogUser";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+import Cart from "./components/Cart";
 
 // import Grocery from "./components/Grocery";
 
@@ -41,12 +44,14 @@ const GafoorFoodApp = () =>{
   setName(data.firstName);
   },[])
     return(
+      <Provider store={appStore}>
       <UserContext.Provider value ={{loggedUser:name, setName}}>
         <div className="food-app">
             <Header />
             <Outlet />
         </div>
         </UserContext.Provider>
+        </Provider>
     )
 }
 
@@ -70,6 +75,10 @@ const app = createBrowserRouter([
       {
         path: "/login",
         element: <LogUser />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
       {
         path: "/restaurant/menu/:resId",

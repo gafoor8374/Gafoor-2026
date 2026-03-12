@@ -1,9 +1,18 @@
 import { useState } from "react";
 import { RESIMG_URL } from "../utils/constants";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 
 const AccordinBody = ({ list = [] }) => {
+  const [count, setCount] = useState(0)
 
+  const dispatch = useDispatch() // import dispatch function
 //   console.log(list);
+const handleAddItems = (item)=>{
+  //dispatch an action to item
+  dispatch(addItem(item));
+  
+};
   return (
     <div>
       {list?.map((item) => (
@@ -30,7 +39,8 @@ const AccordinBody = ({ list = [] }) => {
               alt=""
             />
 
-            <button className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-white text-green-600 font-bold px-4 py-1 rounded-lg shadow">
+            <button className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-white text-green-600 font-bold px-4 py-1 rounded-lg shadow" 
+            onClick={()=>handleAddItems(item)} >
               ADD +
             </button>
           </div>
