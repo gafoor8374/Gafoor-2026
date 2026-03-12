@@ -200,11 +200,20 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import Shimmer from "./Shimmer";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
+import ItemsList from "./ItemsList";
+import Filterveg from "./Filterveg";
+
 
 const ResturantMenu = () => {
   const { resId } = useParams();
 
   const [resInfo,menuInfo] = useRestaurantMenu(resId);
+
+  // const filterVeg = useRestaurantMenu(resId);
+
+  // console.log(filterVeg);
+
+  // console.log(menuInfo);
 
   if(resInfo === null) return <Shimmer />;
   const {
@@ -215,8 +224,11 @@ const ResturantMenu = () => {
     totalRatingsString,
   } = resInfo?.cards[2]?.card?.card?.info || {};
 
+  // const items =resInfo?.cards[2];
+  // console.log(items);
+
   return (
-    <div className="res-info">
+    <div className="text-center">
       <h1 className="font-bold">{name}</h1>
       <h3>
         {avgRatingString}({totalRatingsString}) <span>.</span>
@@ -226,16 +238,7 @@ const ResturantMenu = () => {
       <div className="menu">
         <h2>Menu</h2>
         <div>
-          {menuInfo.map((item, index) => {
-            const info = item?.card?.info;
-
-            return (
-
-              <div key={info?.id ? info.id + "-" + index : index}>
-                {info?.name} - ₹{(info?.price || info?.defaultPrice) / 100}
-              </div>
-            );
-          })}
+          <ItemsList menu = {menuInfo} />
         </div>
       </div>
     </div>

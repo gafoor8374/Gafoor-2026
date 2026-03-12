@@ -1,4 +1,4 @@
-import Rescards from "./Rescards";
+import Rescards, {PromtedWithLabel}from "./Rescards";
 import resList from "../utils/mockData";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
@@ -9,7 +9,7 @@ const Body = () => {
   const [resturantList, setResturantList] = useState([]);
   const [filterList, setFilterList] = useState([]);
 
-  const [searchText, setSearchText] = useState("")
+  const [searchText, setSearchText] = useState("");
 
   // Event handler
   const FilterRest = () => {
@@ -55,10 +55,10 @@ const Body = () => {
   };
 // debugger;
   const onlineStatus = useOnlineStatus();
+  const  WithPromtedLabel= PromtedWithLabel();
 
   if(onlineStatus === false){
-    return(<h4>Look's your internet connection check...!!!!</h4>);
-    
+    return(<h4>Look's your internet connection check...!!!!</h4>);  
   }
 
   //Conditional rendering
@@ -76,22 +76,24 @@ const Body = () => {
             onChange={SearchReasturant}
 
           />
-          <button className="m-4 border border-black, bg-green-200 rounded-lg"
+          <button className="m-4 border border-black bg-green-200 rounded-lg"
             onClick={SeachingResturant}>
             Search
           </button>
 
-          <button className="m-4 border border-black, bg-green-200 rounded-lg" onClick={FilterRest}>
+          <button className="m-4 border border-black bg-green-200 rounded-lg" onClick={FilterRest}>
             Filter Resturant
           </button>
         </div>
+        
         <div className="flex flex-wrap border-solid m-5 p-4">
           {filterList.map((resturant) => (
             <Link
               key={resturant.info.id}
               to={("restaurant/menu/"+ resturant.info.id)}
             >
-              <Rescards resData={resturant} />
+              {resturant.info.promoted ?( <WithPromtedLabel resData={resturant} />) :(<Rescards resData={resturant} />)}
+              
             </Link>
           ))}
         </div>

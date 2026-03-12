@@ -1,7 +1,11 @@
+import { useContext, useEffect } from "react";
 import { RESIMG_URL }  from "../utils/constants";
+import UserContext from "../utils/UserContext";
 
 const Rescards = (props) =>{
     const {resData} = props;
+
+    const {loggedUser} = useContext(UserContext)
 
     const {cloudinaryImageId, name,cuisines,avgRating,sla,costForTwo} = resData?.info;
     return (
@@ -12,8 +16,20 @@ const Rescards = (props) =>{
             <h5 className="*">{avgRating} stars</h5>
             <h5>{sla?.deliveryTime} Mins</h5>
             <h5>{costForTwo}</h5>
+            <h5>Name:{loggedUser}</h5>
         </div>
     )
 }
 
+export const PromtedWithLabel = (Rescards)=>{
+   
+    return (props)=>{
+        return(
+            <div>
+            <label>Prmoted</label>
+            <Rescards {...props} />
+            </div>
+        )
+    }
+}
 export default Rescards;

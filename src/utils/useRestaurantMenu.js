@@ -20,31 +20,31 @@ const useRestaurantMenu = (resId) => {
 
         const json = await data.json();
 
-        console.log(json);
+        // console.log(json);
         setResInfo(json.data);
+        // const items = resInfo?.cards;
+        //    return card?.groupedCard
+        // });
 
-        const groupedCards = json?.data?.cards?.find((card) => {
-           return card?.groupedCard
-        });
-
-        const regularCards =
-            groupedCards?.groupedCard?.cardGroupMap?.REGULAR?.cards || [];
-        const allItems = regularCards
-            .map((item) => {
-                const card = item?.card?.card;
+        // const regularCards =
+        //     groupedCards?.groupedCard?.cardGroupMap?.REGULAR?.cards || [];
+        // const allItems = regularCards
+        //     .map((item) => {
+        //         const card = item?.card?.card;
                 
-                const directItems = card?.itemCards || [];
+        //         const directItems = card?.itemCards || [];
 
-                const nestedItems =
-                    card?.categories?.map((cat) => cat?.itemCards || []) || [];
+        //         const nestedItems =
+        //             card?.categories?.map((cat) => cat?.itemCards || []) || [];
 
-                return [...directItems, ...nestedItems.flat()];
-            })
-            .flat();
+        //         return [...directItems, ...nestedItems.flat()];
+        //     })
+        //     .flat();
 
-        console.log("allItmems:", allItems);
+        // console.log("allItmems:", allItems);
 
-        setMenuInfo(allItems);
+        setMenuInfo(json?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c)=> c?.card?.card?.["@type"] === 
+"type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"));
 
     };
     return [resInfo, menuInfo];
